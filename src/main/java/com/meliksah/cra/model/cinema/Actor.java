@@ -1,5 +1,6 @@
 package com.meliksah.cra.model.cinema;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -18,8 +19,10 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Actor extends BaseEntity {
 
+	@Column(nullable = false)
 	String name;
 
+	@Column(nullable = false)
 	String surname;
 
 }
