@@ -1,9 +1,14 @@
 package com.meliksah.cra.model.cinema;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.meliksah.cra.model.base.BaseEntity;
 
 import lombok.AllArgsConstructor;
@@ -27,5 +32,9 @@ public class Movie extends BaseEntity {
 
 	@Column(nullable = false)
 	String genre;
+
+	@JsonIgnore
+	@OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
+	private List<MovieSession> movieSessions;
 
 }

@@ -8,7 +8,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.meliksah.cra.model.cinema.Movie;
 
-@RepositoryRestResource(path = "movie", collectionResourceRel = "movies")
+@RepositoryRestResource(path = "movie")
 public interface MovieRepository extends JpaRepository<Movie, UUID>, JpaSpecificationExecutor<Movie> {
 
 }

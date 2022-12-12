@@ -4,7 +4,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.meliksah.cra.model.base.BaseEntity;
@@ -24,12 +24,12 @@ import lombok.NoArgsConstructor;
 public class MovieSessionChair extends BaseEntity {
 
 	@NotNull
-	@OneToMany(cascade = CascadeType.PERSIST)
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "movie_session_id")
 	private MovieSession movieSession;
 
 	@NotNull
-	@OneToMany(cascade = CascadeType.PERSIST)
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "chair_id")
 	private Chair chair;
 
